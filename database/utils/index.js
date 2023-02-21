@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 module.exports.connection = async () => {
   try {
+    mongoose.set('debug', true);
     await mongoose.connect(process.env.MONGO_DB_CONN_STR, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
